@@ -36,7 +36,9 @@ import java.io.OutputStream;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
-
+    private String cmd = "";
+    private String cmdText = "";
+    private String btn01_stat, btn02_stat,btn03_stat,btn04_stat,btn05_stat,btn06_stat,btn07_stat, btn08_stat;
     private String deviceName = null;
     private String deviceAddress;
     public static Handler handler;
@@ -58,8 +60,17 @@ public class MainActivity extends AppCompatActivity {
         final ProgressBar progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
         final TextView textViewInfo = findViewById(R.id.textViewInfo);
-        final ImageView imageView = findViewById(R.id.imageView);
-        imageView.setBackgroundColor(getResources().getColor(R.color.colorOff));
+        //final ImageView imageView = findViewById(R.id.imageView);
+        //imageView.setBackgroundColor(getResources().getColor(R.color.colorOff));
+
+        btn01_stat = "off";
+        btn02_stat = "off";
+        btn03_stat = "off";
+        btn04_stat = "off";
+        btn05_stat = "off";
+        btn06_stat = "off";
+        btn07_stat = "off";
+        btn08_stat = "off";
 
         // If a bluetooth device has been selected from SelectDeviceActivity
         deviceName = getIntent().getStringExtra("deviceName");
@@ -94,6 +105,13 @@ public class MainActivity extends AppCompatActivity {
                                 toolbar.setSubtitle("Connected to " + deviceName);
                                 progressBar.setVisibility(View.GONE);
                                 buttonConnect.setEnabled(true);
+                                for (int i=1;i<=11;i++){
+                                    String temp_cmd = "";
+                                    if (i*2 < 10){
+                                        temp_cmd = String.valueOf(i*2) + "N";
+                                    }
+                                    connectedThread.write(temp_cmd);
+                                }
                                 loadMain();
                                 break;
                             case -1:
@@ -116,6 +134,80 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void setCmd(String val){
+        cmd = val;
+        cmdText = cmd;
+        connectedThread.write(cmdText);
+    }
+
+    public String getCmd(){
+        return cmd;
+    }
+
+    public String getBtn01_stat() {
+        return btn01_stat;
+    }
+
+    public void setBtn01_stat(String btn01_stat) {
+        this.btn01_stat = btn01_stat;
+    }
+
+    public String getBtn02_stat() {
+        return btn02_stat;
+    }
+
+    public void setBtn02_stat(String btn02_stat) {
+        this.btn02_stat = btn02_stat;
+    }
+
+    public String getBtn03_stat() {
+        return btn03_stat;
+    }
+
+    public void setBtn03_stat(String btn03_stat) {
+        this.btn03_stat = btn03_stat;
+    }
+
+    public String getBtn04_stat() {
+        return btn04_stat;
+    }
+
+    public void setBtn04_stat(String btn04_stat) {
+        this.btn04_stat = btn04_stat;
+    }
+
+    public String getBtn05_stat() {
+        return btn05_stat;
+    }
+
+    public void setBtn05_stat(String btn05_stat) {
+        this.btn05_stat = btn05_stat;
+    }
+
+    public String getBtn06_stat() {
+        return btn06_stat;
+    }
+
+    public void setBtn06_stat(String btn06_stat) {
+        this.btn06_stat = btn06_stat;
+    }
+
+    public String getBtn07_stat() {
+        return btn07_stat;
+    }
+
+    public void setBtn07_stat(String btn07_stat) {
+        this.btn07_stat = btn07_stat;
+    }
+
+    public String getBtn08_stat() {
+        return btn08_stat;
+    }
+
+    public void setBtn08_stat(String btn08_stat) {
+        this.btn08_stat = btn08_stat;
     }
 
     public void loadMain(){
@@ -209,8 +301,8 @@ public class MainActivity extends AppCompatActivity {
 
             // The connection attempt succeeded. Perform work associated with
             // the connection in a separate thread.
-            /*connectedThread = new ConnectedThread(mmSocket);
-            connectedThread.run();*/
+            connectedThread = new ConnectedThread(mmSocket);
+            connectedThread.run();
         }
 
         // Closes the client socket and causes the thread to finish.
