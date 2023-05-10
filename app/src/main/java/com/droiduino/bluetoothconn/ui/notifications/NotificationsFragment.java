@@ -44,7 +44,7 @@ public class NotificationsFragment extends Fragment {
         btn09.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (random_stat) {
+                if (!random_stat) {
                     context.setCmd("17");
                     random_stat = true;
                 }else{

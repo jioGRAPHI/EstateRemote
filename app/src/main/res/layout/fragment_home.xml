@@ -48,29 +48,31 @@
                 android:weightSum="1"
                 android:orientation="horizontal">
 
-                <Button
+                <android.widget.Button
                     android:id="@+id/btn01"
                     android:layout_margin="5dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:theme="@style/btnstyle"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
                     android:textSize="12dp"
                     android:text="Gym Area"
                     android:textColor="#ffffff">
-                </Button>
+                </android.widget.Button>
 
-                <Button
+                <android.widget.Button
                     android:id="@+id/btn02"
                     android:layout_margin="5dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:theme="@style/btnstyle"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
                     android:textSize="12dp"
                     android:text="Lobby"
                     android:textColor="#ffffff">
-                </Button>
+                </android.widget.Button>
 
             </LinearLayout>
 
@@ -81,29 +83,31 @@
                 android:weightSum="1"
                 android:orientation="horizontal">
 
-                <Button
+                <android.widget.Button
                     android:id="@+id/btn03"
                     android:layout_margin="5dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:theme="@style/btnstyle"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
                     android:textSize="9dp"
                     android:text="Amenity Floor (Low Zone)"
                     android:textColor="#ffffff">
-                </Button>
+                </android.widget.Button>
 
-                <Button
+                <android.widget.Button
                     android:id="@+id/btn04"
                     android:layout_margin="5dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:theme="@style/btnstyle"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
                     android:textSize="9dp"
                     android:text="Amenity Floor (High Zone)"
                     android:textColor="#ffffff">
-                </Button>
+                </android.widget.Button>
 
             </LinearLayout>
 
@@ -114,29 +118,31 @@
                 android:weightSum="1"
                 android:orientation="horizontal">
 
-                <Button
+                <android.widget.Button
                     android:id="@+id/btn05"
                     android:layout_margin="5dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:theme="@style/btnstyle"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
                     android:textSize="12dp"
                     android:text="Super Penthouse"
                     android:textColor="#ffffff">
-                </Button>
+                </android.widget.Button>
 
-                <Button
+                <android.widget.Button
                     android:id="@+id/btn06"
                     android:layout_margin="5dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:theme="@style/btnstyle"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
                     android:textSize="9dp"
                     android:text="Amenity Floor (Penthouse)"
                     android:textColor="#ffffff">
-                </Button>
+                </android.widget.Button>
 
             </LinearLayout>
 
