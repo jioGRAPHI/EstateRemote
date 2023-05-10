@@ -2,6 +2,8 @@ package com.droiduino.bluetoothconn;
 
 import static android.content.ContentValues.TAG;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -13,11 +15,16 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -38,13 +45,16 @@ import java.util.UUID;
 public class MainActivity extends AppCompatActivity {
     private String cmd = "";
     private String cmdText = "";
-    private String btn01_stat, btn02_stat,btn03_stat,btn04_stat,btn05_stat,btn06_stat,btn07_stat, btn08_stat;
+    private String btn01_stat, btn02_stat,btn03_stat,btn04_stat,btn05_stat,btn06_stat,btn07_stat, btn08_stat, btn09_stat;
     private String deviceName = null;
     private String deviceAddress;
     public static Handler handler;
     public static BluetoothSocket mmSocket;
     public static ConnectedThread connectedThread;
     public static CreateConnectThread createConnectThread;
+
+    private Handler mHandler;
+    private Runnable mRunnable;
 
     private final static int CONNECTING_STATUS = 1; // used in bluetooth handler to identify message status
     private final static int MESSAGE_READ = 2; // used in bluetooth handler to identify message update
@@ -71,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         btn06_stat = "off";
         btn07_stat = "off";
         btn08_stat = "off";
+        btn09_stat = "off";
 
         // If a bluetooth device has been selected from SelectDeviceActivity
         deviceName = getIntent().getStringExtra("deviceName");
@@ -91,6 +102,20 @@ public class MainActivity extends AppCompatActivity {
             createConnectThread = new CreateConnectThread(bluetoothAdapter, deviceAddress);
             createConnectThread.start();
         }
+
+
+        mHandler = new Handler();
+        mRunnable = new Runnable() {
+
+            @Override
+            public void run() {
+                IdleDialog idleDialog = new IdleDialog(MainActivity.this);
+                idleDialog.show();
+                Window window_idle = idleDialog.getWindow();
+                window_idle.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+            }
+        };
+        startHandler();
 
         /*
         Second most important piece of Code. GUI Handler
@@ -134,6 +159,52 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onUserInteraction() {
+        // TODO Auto-generated method stub
+        super.onUserInteraction();
+        stopHandler();//stop first and then start
+        startHandler();
+    }
+    public void stopHandler() {
+        mHandler.removeCallbacks(mRunnable);
+    }
+    public void startHandler() {
+        //mHandler.postDelayed(mRunnable, 5*60*1000);
+        mHandler.postDelayed(mRunnable, 5*60*1000);
+    }
+
+    public class IdleDialog extends Dialog implements
+            android.view.View.OnClickListener {
+        public Activity c;
+        public IdleDialog(Activity a) {
+            super(a);
+            // TODO Auto-generated constructor stub
+            this.c = a;
+        }
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            setContentView(R.layout.logo_idle);
+        }
+
+        @Override
+        public void onClick(View v) {
+            dismiss();
+            stopHandler();//stop first and then start
+            startHandler();
+        }
+        @Override
+        public boolean dispatchTouchEvent(MotionEvent event)
+        {
+            this.dismiss();
+            stopHandler();//stop first and then start
+            startHandler();
+            return false;
+        }
     }
 
     public void setCmd(String val){
@@ -208,6 +279,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void setBtn08_stat(String btn08_stat) {
         this.btn08_stat = btn08_stat;
+    }
+
+    public String getBtn09_stat() {
+        return btn09_stat;
+    }
+
+    public void setBtn09_stat(String btn09_stat) {
+        this.btn09_stat = btn09_stat;
     }
 
     public void loadMain(){

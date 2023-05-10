@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />-->
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1"
@@ -142,6 +142,198 @@
                     android:textSize="9dp"
                     android:text="Amenity Floor (Penthouse)"
                     android:textColor="#ffffff">
+                </android.widget.Button>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.75"
+            android:background="#000000">
+
+            <ImageView
+                android:id="@+id/bldg_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/makati_estate_png"
+                tools:ignore="VectorDrawableCompat" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:background="#000000"
+            android:weightSum="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.33"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <android.widget.Button
+                    android:id="@+id/btn01"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="18dp"
+                    android:text="Gym Area"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn02"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="18dp"
+                    android:text="Lobby"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn03"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="18dp"
+                    android:text="Amenity Floor (Low Zone)"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.33"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+
+                <android.widget.Button
+                    android:id="@+id/btn04"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="18dp"
+                    android:text="Amenity Floor (High Zone)"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+
+                <android.widget.Button
+                    android:id="@+id/btn05"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="18dp"
+                    android:text="All"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn06"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="18dp"
+                    android:text="Amenity Floor (Penthouse)"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.33"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <android.widget.Button
+                    android:id="@+id/btn07"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="18dp"
+                    android:text="Cars"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn08"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="18dp"
+                    android:text="Street Light"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn09"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="18dp"
+                    android:text="Random"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
                 </android.widget.Button>
 
             </LinearLayout>
