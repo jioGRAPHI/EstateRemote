@@ -45,7 +45,8 @@ import java.util.UUID;
 public class MainActivity extends AppCompatActivity {
     private String cmd = "";
     private String cmdText = "";
-    private String btn01_stat, btn02_stat,btn03_stat,btn04_stat,btn05_stat,btn06_stat,btn07_stat, btn08_stat, btn09_stat;
+    private String btn01_stat, btn02_stat,btn03_stat,btn04_stat,btn05_stat,btn06_stat,btn07_stat, btn08_stat, btn09_stat, btn10_stat, btn11_stat, btn12_stat, btn13_stat;
+    private boolean initial_click = true;
     private String deviceName = null;
     private String deviceAddress;
     public static Handler handler;
@@ -82,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
         btn07_stat = "off";
         btn08_stat = "off";
         btn09_stat = "off";
+        btn10_stat = "off";
+        btn11_stat = "off";
+        btn12_stat = "off";
+        btn13_stat = "off";
 
         // If a bluetooth device has been selected from SelectDeviceActivity
         deviceName = getIntent().getStringExtra("deviceName");
@@ -130,13 +135,8 @@ public class MainActivity extends AppCompatActivity {
                                 toolbar.setSubtitle("Connected to " + deviceName);
                                 progressBar.setVisibility(View.GONE);
                                 buttonConnect.setEnabled(true);
-                                for (int i=1;i<=11;i++){
-                                    String temp_cmd = "";
-                                    if (i*2 < 10){
-                                        temp_cmd = String.valueOf(i*2) + "N";
-                                    }
-                                    connectedThread.write(temp_cmd);
-                                }
+                                connectedThread.write("19");
+                                //initial_click = true;
                                 loadMain();
                                 break;
                             case -1:
@@ -208,6 +208,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setCmd(String val){
+        /*if (initial_click){
+            connectedThread.write("10");
+            initial_click = false;
+        }*/
         cmd = val;
         cmdText = cmd;
         connectedThread.write(cmdText);
@@ -287,6 +291,38 @@ public class MainActivity extends AppCompatActivity {
 
     public void setBtn09_stat(String btn09_stat) {
         this.btn09_stat = btn09_stat;
+    }
+
+    public String getBtn10_stat() {
+        return btn10_stat;
+    }
+
+    public void setBtn10_stat(String btn10_stat) {
+        this.btn10_stat = btn10_stat;
+    }
+
+    public String getBtn11_stat() {
+        return btn11_stat;
+    }
+
+    public void setBtn11_stat(String btn11_stat) {
+        this.btn11_stat = btn11_stat;
+    }
+
+    public String getBtn12_stat() {
+        return btn12_stat;
+    }
+
+    public void setBtn12_stat(String btn12_stat) {
+        this.btn12_stat = btn12_stat;
+    }
+
+    public String getBtn13_stat() {
+        return btn13_stat;
+    }
+
+    public void setBtn13_stat(String btn13_stat) {
+        this.btn13_stat = btn13_stat;
     }
 
     public void loadMain(){
