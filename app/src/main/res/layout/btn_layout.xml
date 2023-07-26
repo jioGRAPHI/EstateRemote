@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_LL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:weightSum="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <android.widget.Button
+                    android:id="@+id/btn01"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn01"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn02"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn02"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn03"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn03"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <android.widget.Button
+                    android:id="@+id/btn04"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn04"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn05"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn05"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn06"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn06"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <android.widget.Button
+                    android:id="@+id/btn07"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn07"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn08"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn08"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn09"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn09"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <android.widget.Button
+                    android:id="@+id/btn10"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn10"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn11"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn11"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+                <android.widget.Button
+                    android:id="@+id/btn12"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/btn_layout"
+                    android:textSize="10sp"
+                    android:text="btn12"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/rebelton_extended">
+                </android.widget.Button>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -38,7 +38,7 @@ public class NotificationsFragment extends Fragment {
         /*final TextView textView = root.findViewById(R.id.text_notifications);
         notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);*/
 
-        btn09 = (Button) root.findViewById(R.id.btn09);
+        /*btn09 = (Button) root.findViewById(R.id.btn09);
         random_stat = false;
 
         btn09.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +52,7 @@ public class NotificationsFragment extends Fragment {
                     random_stat = false;
                 }
             }
-        });
+        });*/
 
         return root;
     }

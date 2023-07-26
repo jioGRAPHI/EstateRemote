@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -45,7 +46,9 @@ import java.util.UUID;
 public class MainActivity extends AppCompatActivity {
     private String cmd = "";
     private String cmdText = "";
-    private String btn01_stat, btn02_stat,btn03_stat,btn04_stat,btn05_stat,btn06_stat,btn07_stat, btn08_stat, btn09_stat, btn10_stat, btn11_stat, btn12_stat, btn13_stat;
+    private String all_stat, random_stat, landscape_stat, lobby_stat, secondFloor_stat, typicalFloor_stat, amenity_stat, amenityPenthouse_stat,street_stat,
+            ayalaSide_stat, ritzSide_stat, urdanetaSide_stat, discoveryPrimeaSide_stat, garden_stat, playArea_stat, wineTasting_stat, outdoorLounge_stat,
+            wineCellar_stat, businessCentre_stat, fitnessCentre_stat, atriumLounge_stat, pavillionLounge_stat, arrivalLounge_stat, pianoLounge_stat, poolDeck_stat;
     private boolean initial_click = true;
     private String deviceName = null;
     private String deviceAddress;
@@ -74,19 +77,31 @@ public class MainActivity extends AppCompatActivity {
         //final ImageView imageView = findViewById(R.id.imageView);
         //imageView.setBackgroundColor(getResources().getColor(R.color.colorOff));
 
-        btn01_stat = "off";
-        btn02_stat = "off";
-        btn03_stat = "off";
-        btn04_stat = "off";
-        btn05_stat = "off";
-        btn06_stat = "off";
-        btn07_stat = "off";
-        btn08_stat = "off";
-        btn09_stat = "off";
-        btn10_stat = "off";
-        btn11_stat = "off";
-        btn12_stat = "off";
-        btn13_stat = "off";
+        all_stat = "off";
+        random_stat = "off";
+        landscape_stat = "off";
+        lobby_stat = "off";
+        street_stat = "off";
+        secondFloor_stat = "off";
+        typicalFloor_stat = "off";
+        amenity_stat = "off";
+        amenityPenthouse_stat = "off";
+        ayalaSide_stat = "off";
+        ritzSide_stat = "off";
+        urdanetaSide_stat = "off";
+        discoveryPrimeaSide_stat = "off";
+        garden_stat = "off";
+        playArea_stat = "off";
+        wineTasting_stat = "off";
+        outdoorLounge_stat = "off";
+        wineCellar_stat = "off";
+        businessCentre_stat = "off";
+        fitnessCentre_stat = "off";
+        atriumLounge_stat = "off";
+        pavillionLounge_stat = "off";
+        arrivalLounge_stat = "off";
+        pianoLounge_stat = "off";
+        poolDeck_stat = "off";
 
         // If a bluetooth device has been selected from SelectDeviceActivity
         deviceName = getIntent().getStringExtra("deviceName");
@@ -217,112 +232,212 @@ public class MainActivity extends AppCompatActivity {
         connectedThread.write(cmdText);
     }
 
-    public String getCmd(){
-        return cmd;
+    public static String getScreenWidthAndHeight(Activity activity) {
+        DisplayMetrics dm = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int width = dm.widthPixels;
+        String w = String.valueOf(width);
+        return w;
     }
 
-    public String getBtn01_stat() {
-        return btn01_stat;
+    public String getAll_stat() {
+        return all_stat;
     }
 
-    public void setBtn01_stat(String btn01_stat) {
-        this.btn01_stat = btn01_stat;
+    public void setAll_stat(String all_stat) {
+        this.all_stat = all_stat;
     }
 
-    public String getBtn02_stat() {
-        return btn02_stat;
+    public String getAmenity_stat() {
+        return amenity_stat;
     }
 
-    public void setBtn02_stat(String btn02_stat) {
-        this.btn02_stat = btn02_stat;
+    public void setAmenity_stat(String amenity_stat) {
+        this.amenity_stat = amenity_stat;
     }
 
-    public String getBtn03_stat() {
-        return btn03_stat;
+    public String getAmenityPenthouse_stat() {
+        return amenityPenthouse_stat;
     }
 
-    public void setBtn03_stat(String btn03_stat) {
-        this.btn03_stat = btn03_stat;
+    public void setAmenityPenthouse_stat(String amenityPenthouse_stat) {
+        this.amenityPenthouse_stat = amenityPenthouse_stat;
     }
 
-    public String getBtn04_stat() {
-        return btn04_stat;
+    public String getAyalaSide_stat() {
+        return ayalaSide_stat;
     }
 
-    public void setBtn04_stat(String btn04_stat) {
-        this.btn04_stat = btn04_stat;
+    public void setAyalaSide_stat(String ayalaSide_stat) {
+        this.ayalaSide_stat = ayalaSide_stat;
     }
 
-    public String getBtn05_stat() {
-        return btn05_stat;
+    public String getDiscoveryPrimeaSide_stat() {
+        return discoveryPrimeaSide_stat;
     }
 
-    public void setBtn05_stat(String btn05_stat) {
-        this.btn05_stat = btn05_stat;
+    public void setDiscoveryPrimeaSide_stat(String discoveryPrimeaSide_stat) {
+        this.discoveryPrimeaSide_stat = discoveryPrimeaSide_stat;
     }
 
-    public String getBtn06_stat() {
-        return btn06_stat;
+    public String getGarden_stat() {
+        return garden_stat;
     }
 
-    public void setBtn06_stat(String btn06_stat) {
-        this.btn06_stat = btn06_stat;
+    public void setGarden_stat(String garden_stat) {
+        this.garden_stat = garden_stat;
     }
 
-    public String getBtn07_stat() {
-        return btn07_stat;
+    public String getBusinessCentre_stat() {
+        return businessCentre_stat;
     }
 
-    public void setBtn07_stat(String btn07_stat) {
-        this.btn07_stat = btn07_stat;
+    public void setBusinessCentre_stat(String businessCentre_stat) {
+        this.businessCentre_stat = businessCentre_stat;
     }
 
-    public String getBtn08_stat() {
-        return btn08_stat;
+    public String getFitnessCentre_stat() {
+        return fitnessCentre_stat;
     }
 
-    public void setBtn08_stat(String btn08_stat) {
-        this.btn08_stat = btn08_stat;
+    public void setFitnessCentre_stat(String fitnessCentre_stat) {
+        this.fitnessCentre_stat = fitnessCentre_stat;
     }
 
-    public String getBtn09_stat() {
-        return btn09_stat;
+    public String getAtriumLounge_stat() {
+        return atriumLounge_stat;
     }
 
-    public void setBtn09_stat(String btn09_stat) {
-        this.btn09_stat = btn09_stat;
+    public void setAtriumLounge_stat(String atriumLounge_stat) {
+        this.atriumLounge_stat = atriumLounge_stat;
     }
 
-    public String getBtn10_stat() {
-        return btn10_stat;
+    public String getArrivalLounge_stat() {
+        return arrivalLounge_stat;
     }
 
-    public void setBtn10_stat(String btn10_stat) {
-        this.btn10_stat = btn10_stat;
+    public void setArrivalLounge_stat(String arrivalLounge_stat) {
+        this.arrivalLounge_stat = arrivalLounge_stat;
     }
 
-    public String getBtn11_stat() {
-        return btn11_stat;
+    public String getRandom_stat() {
+        return random_stat;
     }
 
-    public void setBtn11_stat(String btn11_stat) {
-        this.btn11_stat = btn11_stat;
+    public void setRandom_stat(String random_stat) {
+        this.random_stat = random_stat;
     }
 
-    public String getBtn12_stat() {
-        return btn12_stat;
+    public String getLandscape_stat() {
+        return landscape_stat;
     }
 
-    public void setBtn12_stat(String btn12_stat) {
-        this.btn12_stat = btn12_stat;
+    public void setLandscape_stat(String landscape_stat) {
+        this.landscape_stat = landscape_stat;
     }
 
-    public String getBtn13_stat() {
-        return btn13_stat;
+    public String getLobby_stat() {
+        return lobby_stat;
     }
 
-    public void setBtn13_stat(String btn13_stat) {
-        this.btn13_stat = btn13_stat;
+    public void setLobby_stat(String lobby_stat) {
+        this.lobby_stat = lobby_stat;
+    }
+
+    public String getSecondFloor_stat() {
+        return secondFloor_stat;
+    }
+
+    public void setSecondFloor_stat(String secondFloor_stat) {
+        this.secondFloor_stat = secondFloor_stat;
+    }
+
+    public String getTypicalFloor_stat() {
+        return typicalFloor_stat;
+    }
+
+    public void setTypicalFloor_stat(String typicalFloor_stat) {
+        this.typicalFloor_stat = typicalFloor_stat;
+    }
+
+    public String getRitzSide_stat() {
+        return ritzSide_stat;
+    }
+
+    public void setRitzSide_stat(String ritzSide_stat) {
+        this.ritzSide_stat = ritzSide_stat;
+    }
+
+    public String getUrdanetaSide_stat() {
+        return urdanetaSide_stat;
+    }
+
+    public void setUrdanetaSide_stat(String urdanetaSide_stat) {
+        this.urdanetaSide_stat = urdanetaSide_stat;
+    }
+
+    public String getPlayArea_stat() {
+        return playArea_stat;
+    }
+
+    public void setPlayArea_stat(String playArea_stat) {
+        this.playArea_stat = playArea_stat;
+    }
+
+    public String getWineTasting_stat() {
+        return wineTasting_stat;
+    }
+
+    public void setWineTasting_stat(String wineTasting_stat) {
+        this.wineTasting_stat = wineTasting_stat;
+    }
+
+    public String getOutdoorLounge_stat() {
+        return outdoorLounge_stat;
+    }
+
+    public void setOutdoorLounge_stat(String outdoorLounge_stat) {
+        this.outdoorLounge_stat = outdoorLounge_stat;
+    }
+
+    public String getWineCellar_stat() {
+        return wineCellar_stat;
+    }
+
+    public void setWineCellar_stat(String wineCellar_stat) {
+        this.wineCellar_stat = wineCellar_stat;
+    }
+
+    public String getPavillionLounge_stat() {
+        return pavillionLounge_stat;
+    }
+
+    public void setPavillionLounge_stat(String pavillionLounge_stat) {
+        this.pavillionLounge_stat = pavillionLounge_stat;
+    }
+
+    public String getPianoLounge_stat() {
+        return pianoLounge_stat;
+    }
+
+    public void setPianoLounge_stat(String pianoLounge_stat) {
+        this.pianoLounge_stat = pianoLounge_stat;
+    }
+
+    public String getPoolDeck_stat() {
+        return poolDeck_stat;
+    }
+
+    public void setPoolDeck_stat(String poolDeck_stat) {
+        this.poolDeck_stat = poolDeck_stat;
+    }
+
+    public String getStreet_stat() {
+        return street_stat;
+    }
+
+    public void setStreet_stat(String street_stat) {
+        this.street_stat = street_stat;
     }
 
     public void loadMain(){
@@ -332,6 +447,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = navHostFragment.getNavController();
         NavigationUI.setupWithNavController(navView, navController);
     }
+
     private void ALL_PERMISSION() {
         try {
             int PERMISSION_ALL = 1;

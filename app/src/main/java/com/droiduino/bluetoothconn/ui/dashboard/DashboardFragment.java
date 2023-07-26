@@ -29,7 +29,7 @@ public class DashboardFragment extends Fragment {
         /*final TextView textView = root.findViewById(R.id.text_dashboard);
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);*/
 
-        context.setCmd("18");
+        /*context.setCmd("18");
 
         btn07 = (Button) root.findViewById(R.id.btn07);
         btn08 = (Button) root.findViewById(R.id.btn08);
@@ -58,7 +58,7 @@ public class DashboardFragment extends Fragment {
                     context.setBtn08_stat("off");
                 }
             }
-        });
+        });*/
 
         return root;
     }
